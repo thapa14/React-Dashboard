@@ -1,0 +1,78 @@
+// .taskbox {
+//   width: 50%;
+//   background-color: white;
+//   box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.2);
+// }
+@import "../../var";
+.task {
+  width: 100%;
+  height: 5rem;
+  gap: 1.6rem;
+  border-bottom: 1px solid $grayColor;
+}
+.box__container-main--modify {
+  padding: 0 6px;
+}
+
+.task__message {
+  h5 {
+    margin-bottom: 0.2rem;
+  }
+  span {
+    font-size: 11px;
+    color: gray;
+  }
+}
+
+.footer {
+  gap: 1rem;
+  button {
+    font-size: 14px;
+  }
+}
+
+.task__stripe {
+  width: 3.4px;
+  height: 70%;
+  border-radius: 1rem;
+}
+.latest {
+  background-color: $reactcolor;
+}
+.rejected {
+  background-color: $purpleColor;
+}
+.planned {
+  background-color: $yellowColor;
+}
+.image {
+  background-color: greenyellow;
+}
+
+.badge {
+  font-size: 8.6px;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+  padding: 4px 7px;
+}
+.rejected-badge {
+  background-color: red;
+}
+.planned-badge {
+  background-color: $reactcolor;
+}
+.latest-badge {
+  background-color: green;
+  margin-left: auto;
+}
+
+.task-image {
+  width: 3rem;
+  height: auto;
+}
+
+.image-dir {
+  flex-direction: row-reverse !important;
+  justify-content: flex-end;
+}

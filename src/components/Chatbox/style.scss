@@ -1,0 +1,91 @@
+@import "../../var";
+
+// this is the message section
+
+.message {
+  gap: 1rem;
+  margin-top: 2rem;
+  transition: all 0.2s;
+}
+
+.message__avatar {
+  width: 4rem;
+  div {
+    position: relative;
+    img {
+      width: 3.6rem;
+      height: auto;
+      border-radius: 50%;
+    }
+    .active-status {
+      position: absolute;
+      bottom: -3px;
+      right: 0;
+      width: 1.3rem;
+      height: 1.3rem;
+      border-radius: 50%;
+      background-color: green;
+      border: 3px solid white;
+    }
+  }
+}
+
+.message__content-div {
+  gap: 1rem;
+  .message__content {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    background-color: #aee9ff;
+    padding: 1rem 2.8rem 1rem 2.4rem;
+  }
+}
+.message__details {
+  font-size: 1.1rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  gap: 4px;
+}
+
+.message__content--john {
+  border-radius: 3rem;
+  border-top-right-radius: 0.4rem;
+}
+.message__content--viggo {
+  border-radius: 3rem;
+  border-top-left-radius: 0.4rem;
+}
+
+// input message field
+
+.footer {
+  width: 100%;
+  padding: 0rem 1.6rem;
+  height: 5.4rem;
+  border-top: 1px solid $grayColor;
+}
+.chatbox__input-wrapper {
+  width: 100%;
+  border: 1px solid $grayColor;
+  padding: 1px;
+
+  form {
+    width: 100%;
+    input[type="text"] {
+      font-size: 1.4rem;
+      outline: none;
+      border: none;
+      width: calc(100% - 90px);
+      padding: 0 6px;
+    }
+    input[type="submit"] {
+      width: 9rem;
+      height: 23px;
+      font-size: 1.2rem;
+      padding: 0px 3rem;
+      background-color: $btnColor;
+      border: none;
+      outline: none;
+      color: white;
+    }
+  }
+}
