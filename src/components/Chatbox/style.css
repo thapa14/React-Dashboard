@@ -84,4 +84,13 @@
   border: none;
   outline: none;
   color: white;
+}
+
+@media (max-width: 475px) {
+  .chatbox__input-wrapper form input[type=text] {
+    width: 100%;
+  }
+  .chatbox__input-wrapper form input[type=submit] {
+    display: none;
+  }
 }/*# sourceMappingURL=style.css.map */

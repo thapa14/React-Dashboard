@@ -1,6 +1,10 @@
 import React from "react";
 
-function InputField({ handleFormSubmission, inputHandler, inputMessage }) {
+function MessageInputField({
+  handleFormSubmission,
+  inputHandler,
+  inputMessage,
+}) {
   return (
     <>
       <div className="footer chatbox__input d-flex align-items-center">
@@ -20,4 +24,4 @@ function InputField({ handleFormSubmission, inputHandler, inputMessage }) {
   );
 }
 
-export default InputField;
+export default MessageInputField;

@@ -4,7 +4,7 @@ import { faCalendarCheck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function MessageModule({ userMessage }) {
-  const { userName, type, message } = userMessage;
+  const { userName, type, message, time } = userMessage;
   return (
     <>
       <div
@@ -31,7 +31,7 @@ function MessageModule({ userMessage }) {
             }`}
           >
             <FontAwesomeIcon icon={faCalendarCheck} className="calender" />
-            <span>11:01 pm | Yesterday</span>
+            <span> {time}</span>
           </div>
         </div>
       </div>

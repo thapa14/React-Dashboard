@@ -1,57 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Task from "./Task";
 import "./style.css";
 import { faLayerGroup } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
-
-const taskListData = [
-  {
-    id: "1",
-    task: "Wash the Car",
-    description: "Written By Bob",
-    attribute: "rejected",
-    attributeVal: "rejected",
-  },
-  {
-    id: "2",
-    task: "Task with dropdown menu",
-    description: "By Johnny",
-    attribute: "latest",
-    attributeVal: "latest task",
-  },
-  {
-    id: "3",
-    task: "Badge on right task",
-    description: "this task has shown on hover actions",
-    attribute: "latest",
-    attributeVal: "latest task",
-  },
-  {
-    id: "4",
-    task: "Go grocery shopping",
-    description: "A short description for this todo item",
-    attribute: "image",
-    attributeVal: "./images/john.png",
-  },
-  {
-    id: "5",
-    task: "Wash the Car",
-    description: "Written By Bob",
-    attribute: "rejected",
-    attributeVal: "rejected",
-  },
-  {
-    id: "6",
-    task: "Service the Car",
-    description: "Written By Bob",
-    attribute: "planned",
-    attributeVal: "planned",
-  },
-];
+import { taskListData } from "../../constants/taskList";
 
 function Index() {
-  const [taskArr, setTaskArr] = useState([...taskListData]);
+  const [taskArr, setTaskArr] = useState([]);
+
+  // to add data on page mounting time
+  useEffect(() => {
+    setTaskArr([...taskListData]);
+  }, []);
 
   // function to handle drag and drop
 
@@ -69,14 +30,14 @@ function Index() {
 
   return (
     <>
-      <div className="box__container">
+      <div className="box__container tasklist__wrapper">
         <div className="box__container-heading ">
           <FontAwesomeIcon
             icon={faLayerGroup}
             style={{ color: "blue" }}
             className="heading-icon"
           />
-          <h4 className="m-0">Task Box</h4>
+          <h4 className="m-0">Task List</h4>
         </div>
         <DragDropContext onDragEnd={onEnd}>
           <Droppable droppableId="taskListArea">

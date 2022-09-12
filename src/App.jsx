@@ -1,10 +1,10 @@
 import React from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
-import Page from "./pages";
-import "./commonCss/common.css";
+import Dashboardmain from "./pages/dashboard";
+import "./assets/commonCss/common.css";
 
 function App() {
-  return <Page />;
+  return <Dashboardmain />;
 }
 
 export default App;

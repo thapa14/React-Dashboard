@@ -1,55 +1,21 @@
 import React, { useState, useRef, useEffect } from "react";
-import MessageModule from "./comp/MessageModule";
+import MessageModule from "./MessageModule";
 import "./style.css";
-import InputField from "./comp/InputField";
+import MessageInputField from "./MessageInputField";
 import { faMessage } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { messageData } from "../../constants/messageData";
+import moment from "moment";
 
 function Index() {
   const bottomRef = useRef();
   const [inputMessage, setInputMessage] = useState("");
-  const [userChatData, setUserChatData] = useState([
-    {
-      id: 1,
-      userName: "viggo",
-      message:
-        "But I must explain to you how all this mistaken idea of denouncing pleasure and praising the pain was born and i will give you acomplete account of the system.",
-      type: "other",
-      time: "11:01 AM | Yesterday",
-    },
-    {
-      id: 2,
-      userName: "john",
-      message:
-        "But I must explain to you how all this mistaken idea of denouncing pleasure and praising the pain was born and i will give you acomplete account of the system.",
-      type: "",
-      time: "11:01 AM | Yesterday",
-    },
-    {
-      id: 3,
-      userName: "viggo",
-      message:
-        "But I must explain to you how all this mistaken idea of denouncing pleasure and praising the pain was born and i will give you acomplete account of the system.",
-      type: "other",
-      time: "11:01 AM | Yesterday",
-    },
-    {
-      id: 4,
-      userName: "john",
-      message:
-        "But I must explain to you how all this mistaken idea of denouncing pleasure and praising the pain was born and i will give you acomplete account of the system.",
-      type: "",
-      time: "11:01 AM | Yesterday",
-    },
-    {
-      id: 5,
-      userName: "viggo",
-      message:
-        "But I must explain to you how all this mistaken idea of denouncing pleasure and praising the pain was born and i will give you acomplete account of the system.",
-      type: "other",
-      time: "11:01 AM | Yesterday",
-    },
-  ]);
+  const [userChatData, setUserChatData] = useState([]);
+
+  // to add the data when  page mount
+  useEffect(() => {
+    setUserChatData([...messageData]);
+  }, []);
 
   const inputHandler = (e) => {
     setInputMessage(e.target.value);
@@ -62,9 +28,10 @@ function Index() {
       userName: "john",
       message: inputMessage,
       type: "",
-      time: new Date().getTime(),
+      time: moment().format("hh:mm a"),
     };
 
+    // this timeout function is to delay the message
     setTimeout(() => {
       setUserChatData(() => {
         return [...userChatData, userMessage];
@@ -73,6 +40,7 @@ function Index() {
     setInputMessage("");
   };
 
+  // to scroll to bottom of element on every new message
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [userChatData]);
@@ -94,7 +62,7 @@ function Index() {
           })}
           <div ref={bottomRef}></div>
         </div>
-        <InputField
+        <MessageInputField
           handleFormSubmission={handleFormSubmission}
           inputHandler={inputHandler}
           inputMessage={inputMessage}
