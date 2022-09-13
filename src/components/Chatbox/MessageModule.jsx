@@ -1,5 +1,4 @@
 import React from "react";
-// import user from "../../../assets/images/viggo.png";
 import { faCalendarCheck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 

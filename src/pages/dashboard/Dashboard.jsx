@@ -34,7 +34,7 @@ function Dashboard() {
           </button>
         </div>
       </div>
-      <div className="dashboard__modules d-flex flex-column flex-md-row gap-5">
+      <div className="dashboard__modules d-flex flex-column flex-md-row gap-4">
         <Taskbox />
         <Chatbox />
       </div>

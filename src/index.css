@@ -14,9 +14,3 @@ body {
 ::-webkit-scrollbar {
   width: 4px;
 }
-::-webkit-scrollbar-thumb {
-  background-color: gray;
-}
-::-webkit-scrollbar-track {
-  background-color: lightgray;
-}
